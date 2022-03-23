@@ -57,3 +57,8 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+function callAgainAndAgain() {
+    let name = prompt("What's your name?");
+    alert(name + " is a stupid name, lol. Hector Jones is way cooler!");
+}
