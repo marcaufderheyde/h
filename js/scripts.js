@@ -65,14 +65,14 @@ function callAgainAndAgain() {
         window.open("https://9gag.com", '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes');
         setTimeout(function(){
             window.open('https://hectorjones.co.uk/bomb.html', '_blank').focus();
-          }, 1000);
+          }, 5000);
 }
 
 function load9gag(){
     window.open("https://9gag.com", '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes');
     setTimeout(function(){
         window.open('https://hectorjones.co.uk/bomb.html', '_blank').focus();
-      }, 1000);
+      }, 5000);
 }
 
 // Big meme - chat bot
