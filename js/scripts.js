@@ -62,3 +62,37 @@ function callAgainAndAgain() {
     let name = prompt("What's your name?");
     alert(name + " is a stupid name, lol. Hector Jones is way cooler!");
 }
+
+function reset1(){
+    clearTimeout(my_time);
+    for(i = 1; i < 6; i++){
+        document.getElementById('i'+i).style.left= "500px";
+        document.getElementById('i'+i).style.top= "100px";
+    }
+    document.getElementById("msg").innerHTML="";
+    }
+    
+    function disp(){
+        var step=1; // Change this step value
+        //alert("Hello");
+        for(i = 1; i < 6; i++){
+            var y=document.getElementById('i'+i).offsetTop;
+            var x=document.getElementById('i'+i).offsetLeft;
+            console.log(y, x);
+            document.getElementById("msg").innerHTML="X: " + x  + " Y : " + y
+            if(y < 400 ){y= y +step;
+            document.getElementById('i'+i).style.top= y + "px"; //vertical movment
+            }
+            else{
+                if(x < 800) {
+                    x= x +step;
+                    document.getElementById('i'+i).style.left= x + "px"; //horizontal move
+                }
+            }
+        }
+    }
+    
+    function timer(){
+    disp();
+    my_time=setTimeout('timer()',10);
+    }
