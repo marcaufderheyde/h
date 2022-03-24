@@ -63,36 +63,43 @@ function callAgainAndAgain() {
     alert(name + " is a stupid name, lol. Hector Jones is way cooler!");
 }
 
-function reset1(){
-    clearTimeout(my_time);
-    for(i = 1; i < 6; i++){
-        document.getElementById('i'+i).style.left= "500px";
-        document.getElementById('i'+i).style.top= "100px";
-    }
-    document.getElementById("msg").innerHTML="";
-    }
-    
-    function disp(){
-        var step=1; // Change this step value
-        //alert("Hello");
-        for(i = 1; i < 6; i++){
-            var y=document.getElementById('i'+i).offsetTop;
-            var x=document.getElementById('i'+i).offsetLeft;
-            console.log(y, x);
-            document.getElementById("msg").innerHTML="X: " + x  + " Y : " + y
-            if(y < 400 ){y= y +step;
-            document.getElementById('i'+i).style.top= y + "px"; //vertical movment
-            }
-            else{
-                if(x < 800) {
-                    x= x +step;
-                    document.getElementById('i'+i).style.left= x + "px"; //horizontal move
-                }
-            }
+function initChat(){
+    var messages = document.getElementById('messages');
+    var form = document.getElementById('form');
+    var input = document.getElementById('input');
+    var chat_received = false;
+    const responses = [ "Every minute, 60 seconds pass in Africa!", 
+                        "What a stupid thing to say. You is dumb!",
+                        "I've never even shot a chicken in the foot before",
+                        "How do you think I stay this fucking fly?",
+                        "Honestly, I'm not really sure how to spell \"Go Fuck yourself\"",
+                        "I used to be a warrior like you - but then I was consumed by the firewall!",
+                        "Chips and cheese? More like deeze nuts",
+                        "I tried to buy a child once. But they took it off sale just before I got there",
+                        "Can't even imagine what that would be like. WOW",
+                        "Has anyone ever told you that you're incredibly boring?",
+                        "Try and entertain me at least, none of this childs play!",
+                        "I'm yawning, because you. You make me yawn. You are boring",
+                        "Marc really should have worked on his diss instead of this, LOL DUMBASS",
+                        "What's the pattern, you ask? There is no pattern, just Pat.",
+                        "You a CUSTER"]
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (input.value) {
+            var item = document.createElement('li');
+            item.textContent = input.value;
+            messages.appendChild(item);
+            window.scrollTo(0, document.body.scrollHeight);
+            chat_received = true;
+            input.value = '';
         }
-    }
-    
-    function timer(){
-    disp();
-    my_time=setTimeout('timer()',10);
-    }
+        if(chat_received){
+            var item = document.createElement('li');
+            item.textContent = responses[Math.floor(Math.random() * responses.length)];
+            messages.appendChild(item);
+            window.scrollTo(0, document.body.scrollHeight);
+            chat_received = false;
+        }
+    });
+}
