@@ -96,15 +96,18 @@ function initChat(){
         }
         if(chat_received){
             var item = document.createElement('li');
-            if(responses.length == 1){
-                item.textContent = "Fine you got me. I'm not a bot. But I bet I can botch your asssss";
+            console.log(responses.length);          
+            if(responses.length > 0){
+                var index = Math.floor(Math.random() * responses.length);
+                item.textContent = responses[index];
+                responses.splice(index, 1);
+                messages.appendChild(item);
+                window.scrollTo(0, document.body.scrollHeight);
             }
-
-            var index = Math.floor(Math.random() * responses.length);
-            item.textContent = responses[index];
-            delete responses[index];
-            messages.appendChild(item);
-            window.scrollTo(0, document.body.scrollHeight);
+            else if(responses.length <= 0){
+                item.textContent = "Yeah alright, fine you got me. There is no BOT. Just this fine ass BOOTY!";
+                messages.appendChild(item)
+            }
             chat_received = false;
         }
     });
