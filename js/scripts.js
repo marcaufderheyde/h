@@ -82,7 +82,15 @@ function initChat(){
                         "I'm yawning, because you. You make me yawn. You are boring",
                         "Marc really should have worked on his diss instead of this, LOL DUMBASS",
                         "What's the pattern, you ask? There is no pattern, just Pat.",
-                        "You a CUSTER"]
+                        "You a CUSTER",
+                        "yeah, hope I don't have smegma",
+                        "No! No cake. ",
+                        "What batman movie is this?",
+                        "Grow up",
+                        "I do fucking care",
+                        "uh yup, please kitten",
+                        "Well, just grab my ears while you fuck my butt!",
+                    ]
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
