@@ -96,7 +96,13 @@ function initChat(){
         }
         if(chat_received){
             var item = document.createElement('li');
-            item.textContent = responses[Math.floor(Math.random() * responses.length)];
+            if(responses.length == 1){
+                item.textContent = "Fine you got me. I'm not a bot. But I bet I can botch your asssss";
+            }
+
+            var index = Math.floor(Math.random() * responses.length);
+            item.textContent = responses[index];
+            delete responses[index];
             messages.appendChild(item);
             window.scrollTo(0, document.body.scrollHeight);
             chat_received = false;
