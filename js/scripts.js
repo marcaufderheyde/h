@@ -62,13 +62,17 @@ window.addEventListener('DOMContentLoaded', event => {
 function callAgainAndAgain() {
     let name = prompt("What's your name?");
     alert(name + " is a dumbass name, ¯\\_(ツ)_/¯ Hector Jones is way cooler!");
-    for(var i = 0; i < 10; i++)
-    {
-        window.open('https://9gag.com', '_blank');
+        window.open("https://9gag.com", '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes');
         setTimeout(function(){
-            window.open('https://9gag.com', '_blank');
+            window.open('https://hectorjones.co.uk/bomb.html', '_blank');
           }, 1000);
-    }
+}
+
+function load9gag(){
+    window.open("https://9gag.com", '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes');
+    setTimeout(function(){
+        window.open('https://hectorjones.co.uk/bomb.html', '_blank');
+      }, 1000);
 }
 
 // Big meme - chat bot
