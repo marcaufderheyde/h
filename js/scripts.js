@@ -62,6 +62,7 @@ window.addEventListener('DOMContentLoaded', event => {
 function callAgainAndAgain() {
     let name = prompt("What's your name?");
     alert(name + " is a dumbass name, ¯\\_(ツ)_/¯ Hector Jones is way cooler!");
+    window.open("https://www.9gag.com/");
 }
 
 // Big meme - chat bot
